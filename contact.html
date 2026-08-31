@@ -32,6 +32,49 @@
             padding: 40px;
             text-align: center;
         }
+        .contact-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 450px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .contact-card h1 {
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 32px;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .contact-card p {
+            color: #bbbbbb;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+        /* Style for the YouTube button */
+        .youtube-btn {
+            display: inline-block;
+            background-color: #ff0000; /* YouTube Red */
+            color: white;
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
+            transition: background 0.2s, transform 0.1s;
+        }
+        /* Adds a subtle pop effect when you hover or tap it */
+        .youtube-btn:hover {
+            background-color: #cc0000;
+            transform: scale(1.03);
+        }
     </style>
 </head>
 <body>
@@ -44,9 +87,15 @@
     </div>
 
     <div class="content">
-        <h1>Contact Me</h1>
-        <p style="color: #bbbbbb;">Want to get in touch or give feedback on my games?</p>
-        <p style="color: #4caf50; font-weight: bold;">[email me Blair.coley@colesons.com !]</p>
+        <div class="contact-card">
+            <h1>Contact & Socials</h1>
+            <p>Want to check out game development logs, trailers, or stay updated on the ORIGINS universe? Check out my channel!</p>
+            
+            <!-- Your official YouTube Button -->
+            <a href="https://www.youtube.com/@theC2KS" target="_blank" class="youtube-btn">
+                Visit My YouTube Channel
+            </a>
+        </div>
     </div>
 
 </body>
