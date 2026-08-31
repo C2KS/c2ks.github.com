@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CR4NK Software</title>
+    <title>My Cool Website</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -32,6 +32,41 @@
             padding: 40px;
             text-align: center;
         }
+        /* Overview card box styling */
+        .overview-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 500px;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .overview-card h2 {
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 26px;
+            margin-top: 0;
+            color: #4caf50;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .overview-card p, .overview-card li {
+            color: #bbbbbb;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+        .overview-card ul {
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+        .meta-info {
+            font-size: 12px;
+            color: #666666;
+            margin-top: 20px;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -44,8 +79,26 @@
     </div>
 
     <div class="content">
-        <h1>Welcome to CR4NK Software </h1>
-        <p style="color: #bbbbbb;">This is the Home page. Use the tabs above to look around.</p>
+        <h1>Welcome to My Website!</h1>
+        
+        <!-- Website Overview Box -->
+        <div class="overview-card">
+            <h2>Site Overview</h2>
+            <p>Welcome to the official hub for my game development projects. I built this platform from scratch to showcase my work and share timeline roadmaps for my upcoming game releases.</p>
+            
+            <h2>How to Use the Site</h2>
+            <ul>
+                <li><strong>Home:</strong> Return to this overview dashboard anytime.</li>
+                <li><strong>About:</strong> Read details about me, my coding background, and what drives my development.</li>
+                <li><strong>Games:</strong> Check out the official ORIGINS franchise roadmap, lore teasers, and engine details.</li>
+                <li><strong>Contact:</strong> Find out how to reach out, send feedback, or drop suggestions.</li>
+            </ul>
+
+            <!-- Age / History tracker -->
+            <div class="meta-info">
+                Project Launched: August 31, 2026
+            </div>
+        </div>
     </div>
 
 </body>
