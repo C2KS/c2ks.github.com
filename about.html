@@ -32,6 +32,35 @@
             padding: 40px;
             text-align: center;
         }
+        .about-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 500px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .about-card h1 {
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 32px;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .about-card p {
+            color: #bbbbbb;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .profile-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 2px solid #333;
+            margin-top: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+        }
     </style>
 </head>
 <body>
@@ -44,10 +73,16 @@
     </div>
 
     <div class="content">
-        <h1>About Me</h1>
-        <p style="color: #bbbbbb;">Hey! I'm new'ish to software development and learning how to code websites. Welcome to my page!</p>
-        <p style="color: #bbbbbb;">I also make games!</p>
+        <div class="about-card">
+            <h1>About Me</h1>
+            <!-- Your new updated intro lines -->
+            <p>Hey! I'm a new'ish game developer learning how to code websites. Welcome to my page!</p>
+            <p>I am a passionate indie game developer building the <strong>ORIGINS</strong> horror franchise using custom-modified TurboWarp engines.</p>
+            
+            <img src="steam-user.png" alt="My Steam Profile" class="profile-img">
+        </div>
     </div>
 
 </body>
 </html>
+
