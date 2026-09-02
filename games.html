@@ -28,7 +28,7 @@
         .navbar a:active,
         .navbar a:focus {
             background-color: #333;
-            color: #007bff; /* Changed navbar green to Blue */
+            color: #007bff;
         }
         .content {
             padding: 40px;
@@ -45,10 +45,9 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
         
-        /* This applies the sleek Agency FB font to game titles and descriptions */
         .game-card h2, .game-card p {
             font-family: 'Agency FB', 'Arial Black', sans-serif;
-            letter-spacing: 0.5px; /* Spaces the letters nicely for that gaming look */
+            letter-spacing: 0.5px;
         }
 
         .game-card h2 {
@@ -73,7 +72,7 @@
             margin-bottom: 10px;
             font-family: Arial, sans-serif;
         }
-        .live { background-color: #007bff; color: white; } /* Updated to Blue */
+        .live { background-color: #007bff; color: white; }
         .development { background-color: #ff9800; color: black; }
         .planned { background-color: #2196f3; color: white; }
         .engine-text {
@@ -82,6 +81,17 @@
             font-style: italic;
             margin-top: 15px;
             font-family: Arial, sans-serif;
+        }
+
+        /* --- Scroll Animation CSS --- */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -94,7 +104,7 @@
         <a href="contact.html">Contact</a>
     </div>
 
-    <div class="content">
+    <div class="content scroll-fade">
         <h1>My Games & Roadmap</h1>
         <p style="color: #888;">The official ORIGINS franchise timeline.</p>
 
@@ -128,8 +138,24 @@
             <p style="color: #bbbbbb;">Dark at night, dark at day. The light doesn't shine when there's no colour.</p>
             <div class="engine-text">Engine: Turbowarp (Geared + Mod)</div>
         </div>
-
     </div>
+
+    <!-- --- Scroll Animation JavaScript --- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll(".scroll-fade");
+            function checkScroll() {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 50) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+            window.addEventListener("scroll", checkScroll);
+            checkScroll(); 
+        });
+    </script>
 
 </body>
 </html>
