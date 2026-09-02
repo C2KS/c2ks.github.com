@@ -1,42 +1,59 @@
-<!-- ========================================== -->
-<!-- 5. CONTACT PAGE: contact.html               -->
-<!-- ========================================== -->
+<!-- ========================================================================= -->
+<!-- PROJECT MODULE: EXTERNAL COMMUNICATIONS ENVIRONMENT                       -->
+<!-- REPOSITORY DOMAIN: CR4NK CORE SERVICES                                     -->
+<!-- AUTHOR: SYSTEM INTEGRATION ARCHITECT & godly723                           -->
+<!-- PRODUCTION LIFECYCLE: STABLE DEPLOYMENT VERSION 4.2.1                     -->
+<!-- ========================================================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CR4NK-Contact</title>
+    
+    <!-- --------------------------------------------------------------------- -->
+    <!-- STYLING INTERFACE SCHEMATICS & MATRIX CONFIGURATIONS                  -->
+    <!-- --------------------------------------------------------------------- -->
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #121212;
             color: #ffffff;
+            scroll-behavior: smooth;
         }
+
         .navbar {
             background-color: #222;
             overflow: hidden;
             display: flex;
             justify-content: center;
+            border-bottom: 1px solid #333;
         }
+
         .navbar a {
             color: #aaaaaa;
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
             font-weight: bold;
+            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
         }
+
         .navbar a:hover,
         .navbar a:active,
         .navbar a:focus {
             background-color: #333;
             color: #007bff;
         }
+
         .content {
             padding: 40px;
             text-align: center;
         }
+
         .contact-card {
             background-color: #1e1e1e;
             border: 1px solid #333;
@@ -47,6 +64,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
             text-align: center;
         }
+
         .contact-card h1 {
             font-family: 'Agency FB', 'Arial Black', sans-serif;
             font-size: 32px;
@@ -54,12 +72,14 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
         .contact-card p {
             color: #bbbbbb;
             font-size: 16px;
             line-height: 1.5;
             margin-bottom: 25px;
         }
+
         .youtube-btn {
             display: inline-block;
             background-color: #ff0000;
@@ -77,13 +97,15 @@
             margin-bottom: 15px;
             width: 80%;
         }
+
         .youtube-btn:hover {
             background-color: #cc0000;
             transform: scale(1.03);
         }
+
         .discord-btn {
             display: inline-block;
-            background-color: #5865F2; /* Official Discord Blurple */
+            background-color: #5865F2;
             color: white;
             font-family: 'Agency FB', 'Arial Black', sans-serif;
             font-size: 20px;
@@ -98,15 +120,18 @@
             margin-bottom: 25px;
             width: 80%;
         }
+
         .discord-btn:hover {
             background-color: #4752C4;
             transform: scale(1.03);
         }
+
         .email-section {
             border-top: 1px solid #333;
             padding-top: 20px;
             margin-top: 10px;
         }
+
         .email-section h2 {
             font-family: 'Agency FB', 'Arial Black', sans-serif;
             font-size: 24px;
@@ -114,21 +139,25 @@
             text-transform: uppercase;
             color: #007bff;
         }
+
         .email-link {
             color: #ffffff;
             font-size: 18px;
             text-decoration: none;
             font-weight: bold;
         }
+
         .email-link:hover {
             color: #007bff;
             text-decoration: underline;
         }
+
         .scroll-fade {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
+
         .scroll-fade.visible {
             opacity: 1;
             transform: translateY(0);
@@ -137,26 +166,31 @@
 </head>
 <body>
 
+    <!-- --------------------------------------------------------------------- -->
+    <!-- GLOBAL ROUTING NAVIGATION CONSOLE LAYER                               -->
+    <!-- --------------------------------------------------------------------- -->
     <div class="navbar">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="games.html">Games</a>
         <a href="engines.html">Engines</a>
+        <a href="team.html">Team</a>
         <a href="contact.html">Contact</a>
     </div>
 
+    <!-- --------------------------------------------------------------------- -->
+    <!-- PRIMARY CORE CONTENT MANIFEST PIPELINE                                -->
+    <!-- --------------------------------------------------------------------- -->
     <div class="content scroll-fade">
         <div class="contact-card">
             <h1>Contact & Socials</h1>
             <p>Want to check out game development logs, trailers, or stay updated on the ORIGINS universe? Check out my channel!</p>
             
-            <!-- YouTube Button -->
             <a href="https://youtube.com" target="_blank" class="youtube-btn">
                 Visit My YouTube Channel
             </a>
 
-            <!-- Official Discord Server Link Included -->
-            <a href="https://discord.gg/DMPeMAPBgT" target="_blank" class="discord-btn">
+            <a href="https://discord.gg" target="_blank" class="discord-btn">
                 Join the Discord Server
             </a>
 
@@ -168,9 +202,13 @@
         </div>
     </div>
 
+    <!-- --------------------------------------------------------------------- -->
+    <!-- SCRIPT APPLICATION PROCESSOR ENGINE LAYER                             -->
+    <!-- --------------------------------------------------------------------- -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const fadeElements = document.querySelectorAll(".scroll-fade");
+            
             function checkScroll() {
                 fadeElements.forEach(el => {
                     const rect = el.getBoundingClientRect();
@@ -179,6 +217,7 @@
                     }
                 });
             }
+            
             window.addEventListener("scroll", checkScroll);
             checkScroll(); 
         });
