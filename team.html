@@ -1,5 +1,5 @@
 <!-- ========================================================================= -->
-<!-- PROJECT MODULE: CORE INDEX DASHBOARD LAYER                                 -->
+<!-- PROJECT MODULE: STAFF DIRECTORY ENVIRONMENT                                -->
 <!-- REPOSITORY DOMAIN: CR4NK CORE SERVICES                                     -->
 <!-- AUTHOR: SYSTEM INTEGRATION ARCHITECT & godly723                           -->
 <!-- PRODUCTION LIFECYCLE: STABLE DEPLOYMENT VERSION 4.2.1                     -->
@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CR4NK-Home</title>
+    <title>CR4NK-Team</title>
     
     <!-- --------------------------------------------------------------------- -->
     <!-- STYLING INTERFACE SCHEMATICS & MATRIX CONFIGURATIONS                  -->
@@ -54,44 +54,46 @@
             text-align: center;
         }
 
-        .overview-card {
+        .profile-card {
             background-color: #1e1e1e;
             border: 1px solid #333;
             border-radius: 8px;
             padding: 30px;
             margin: 20px auto;
-            max-width: 500px;
+            max-width: 450px;
             text-align: left;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
 
-        .overview-card h2 {
+        .profile-card h2 {
             font-family: 'Agency FB', 'Arial Black', sans-serif;
-            font-size: 26px;
+            font-size: 28px;
             margin-top: 0;
+            margin-bottom: 5px;
             color: #007bff;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .overview-card p,
-        .overview-card li {
+        .role-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-family: Arial, sans-serif;
+            background-color: #2a2a2a;
+            color: #ffffff;
+            border: 1px solid #444;
+        }
+
+        .profile-card p {
             color: #bbbbbb;
             font-size: 15px;
-            line-height: 1.5;
-        }
-
-        .overview-card ul {
-            padding-left: 20px;
+            line-height: 1.6;
             margin-bottom: 0;
-        }
-
-        .meta-info {
-            font-size: 12px;
-            color: #666666;
-            margin-top: 20px;
-            border-top: 1px solid #333;
-            padding-top: 10px;
         }
 
         .scroll-fade {
@@ -124,31 +126,21 @@
     <!-- PRIMARY CORE CONTENT MANIFEST PIPELINE                                -->
     <!-- --------------------------------------------------------------------- -->
     <div class="content scroll-fade">
-        <h1>Welcome to My Website!</h1>
-        
-        <div class="overview-card">
-            <h2>Site Overview</h2>
-            <p>Welcome to the official hub for my game development projects. I built this platform from scratch to showcase my work and share timeline roadmaps for my upcoming game releases.</p>
-            
-            <h2>How to Use the Site</h2>
-            <ul>
-                <li><strong>Home:</strong> Return to this overview dashboard anytime.</li>
-                <li><strong>About:</strong> Read details about me, my coding background, and what drives my development.</li>
-                <li><strong>Games:</strong> Check out the official ORIGINS franchise roadmap and project timelines.</li>
-                <li><strong>Engines:</strong> Explore the mechanics, frameworks, and architecture powering our code.</li>
-                <li><strong>Team:</strong> Meet the developers guiding architecture and franchise features.</li>
-                <li><strong>Contact:</strong> Find out how to reach out, send feedback, or drop suggestions.</li>
-            </ul>
+        <h1>Development Team</h1>
+        <p style="color: #888; margin-bottom: 30px;">The creative minds behind the architecture and franchise assets.</p>
 
-            <p style="margin-top: 25px; font-style: italic; color: #888; text-align: center;">
-                "Play around, this website is a little young but it's doing good just like how I want your day to go."
-                <br>
-                <strong style="color: #007bff;">— godly723</strong>
-            </p>
+        <!-- STAFF INSTANCE NODE: GODLY723 (YOU) -->
+        <div class="profile-card">
+            <h2>godly723</h2>
+            <div class="role-tag" style="border-color: #007bff; color: #007bff;">Founder</div>
+            <p>godly is the Founder of CR4NK, ORIGINS and L2D. He is the brains of this dream, directing overall production architecture, framework modifications, and custom engine setups.</p>
+        </div>
 
-            <div class="meta-info">
-                Project Launched: August 31, 2026
-            </div>
+        <!-- STAFF INSTANCE NODE: PAIDPRAWNYT (YOUR COUSIN) -->
+        <div class="profile-card">
+            <h2>Paidprawnyt</h2>
+            <div class="role-tag">PlayTester / Co Founder</div>
+            <p>He plays the games before release, telling the founder whether or not the game is worthy right now to be released. Handles crucial gameplay evaluation and mechanic verification feedback.</p>
         </div>
     </div>
 
