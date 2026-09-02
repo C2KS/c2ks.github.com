@@ -1,3 +1,6 @@
+<!-- ========================================== -->
+<!-- 1. HOME PAGE: index.html                    -->
+<!-- ========================================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +37,6 @@
             padding: 40px;
             text-align: center;
         }
-        /* Overview card box styling */
         .overview-card {
             background-color: #1e1e1e;
             border: 1px solid #333;
@@ -53,7 +55,8 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .overview-card p, .overview-card li {
+        .overview-card p,
+        .overview-card li {
             color: #bbbbbb;
             font-size: 15px;
             line-height: 1.5;
@@ -69,8 +72,6 @@
             border-top: 1px solid #333;
             padding-top: 10px;
         }
-
-        /* --- Scroll Animation CSS --- */
         .scroll-fade {
             opacity: 0;
             transform: translateY(20px);
@@ -88,14 +89,13 @@
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="games.html">Games</a>
+        <a href="engines.html">Engines</a>
         <a href="contact.html">Contact</a>
     </div>
 
-    <!-- The class "scroll-fade" will trigger the fade-in script -->
     <div class="content scroll-fade">
         <h1>Welcome to My Website!</h1>
         
-        <!-- Website Overview Box -->
         <div class="overview-card">
             <h2>Site Overview</h2>
             <p>Welcome to the official hub for my game development projects. I built this platform from scratch to showcase my work and share timeline roadmaps for my upcoming game releases.</p>
@@ -104,39 +104,34 @@
             <ul>
                 <li><strong>Home:</strong> Return to this overview dashboard anytime.</li>
                 <li><strong>About:</strong> Read details about me, my coding background, and what drives my development.</li>
-                <li><strong>Games:</strong> Check out the official ORIGINS franchise roadmap, lore teasers, and engine details.</li>
+                <li><strong>Games:</strong> Check out the official ORIGINS franchise roadmap and project timelines.</li>
+                <li><strong>Engines:</strong> Explore the mechanics, frameworks, and architecture powering our code.</li>
                 <li><strong>Contact:</strong> Find out how to reach out, send feedback, or drop suggestions.</li>
             </ul>
 
-            <!-- Your custom message added directly to the dashboard -->
             <p style="margin-top: 25px; font-style: italic; color: #888; text-align: center;">
-                "Play around, this website is a little young but it's doing good just like how I want your day to go." <br>
+                "Play around, this website is a little young but it's doing good just like how I want your day to go."
+                <br>
                 <strong style="color: #007bff;">— godly723</strong>
             </p>
 
-            <!-- Age / History tracker -->
             <div class="meta-info">
                 Project Launched: August 31, 2026
             </div>
         </div>
     </div>
 
-    <!-- --- Scroll Animation JavaScript --- -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const fadeElements = document.querySelectorAll(".scroll-fade");
-
             function checkScroll() {
                 fadeElements.forEach(el => {
                     const rect = el.getBoundingClientRect();
-                    // Checks if the element is visible in the viewport window
                     if (rect.top < window.innerHeight - 50) {
                         el.classList.add("visible");
                     }
                 });
             }
-
-            // Run check once on load, then every time the user scrolls
             window.addEventListener("scroll", checkScroll);
             checkScroll(); 
         });
