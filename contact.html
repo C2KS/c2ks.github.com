@@ -45,6 +45,7 @@
             margin: 20px auto;
             max-width: 450px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            text-align: center;
         }
         .contact-card h1 {
             font-family: 'Agency FB', 'Arial Black', sans-serif;
@@ -73,11 +74,32 @@
             letter-spacing: 1px;
             box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
             transition: background 0.2s, transform 0.1s;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             width: 80%;
         }
         .youtube-btn:hover {
             background-color: #cc0000;
+            transform: scale(1.03);
+        }
+        .discord-btn {
+            display: inline-block;
+            background-color: #5865F2; /* Official Discord Blurple */
+            color: white;
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(88, 101, 242, 0.2);
+            transition: background 0.2s, transform 0.1s;
+            margin-bottom: 25px;
+            width: 80%;
+        }
+        .discord-btn:hover {
+            background-color: #4752C4;
             transform: scale(1.03);
         }
         .email-section {
@@ -128,8 +150,14 @@
             <h1>Contact & Socials</h1>
             <p>Want to check out game development logs, trailers, or stay updated on the ORIGINS universe? Check out my channel!</p>
             
+            <!-- YouTube Button -->
             <a href="https://youtube.com" target="_blank" class="youtube-btn">
                 Visit My YouTube Channel
+            </a>
+
+            <!-- Official Discord Server Link Included -->
+            <a href="https://discord.gg/DMPeMAPBgT" target="_blank" class="discord-btn">
+                Join the Discord Server
             </a>
 
             <div class="email-section">
