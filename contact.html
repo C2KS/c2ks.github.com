@@ -56,7 +56,6 @@
             line-height: 1.5;
             margin-bottom: 25px;
         }
-        /* Style for the YouTube button */
         .youtube-btn {
             display: inline-block;
             background-color: #ff0000;
@@ -78,7 +77,6 @@
             background-color: #cc0000;
             transform: scale(1.03);
         }
-        /* Style for the Email Section */
         .email-section {
             border-top: 1px solid #333;
             padding-top: 20px;
@@ -101,6 +99,17 @@
             color: #007bff;
             text-decoration: underline;
         }
+
+        /* --- Scroll Animation CSS --- */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -112,17 +121,15 @@
         <a href="contact.html">Contact</a>
     </div>
 
-    <div class="content">
+    <div class="content scroll-fade">
         <div class="contact-card">
             <h1>Contact & Socials</h1>
             <p>Want to check out game development logs, trailers, or stay updated on the ORIGINS universe? Check out my channel!</p>
             
-            <!-- Updated YouTube Link -->
-            <a href="https://www.youtube.com/@godly_723" target="_blank" class="youtube-btn">
+            <a href="https://youtube.com" target="_blank" class="youtube-btn">
                 Visit My YouTube Channel
             </a>
 
-            <!-- Email Section -->
             <div class="email-section">
                 <h2>Business & Inquiries</h2>
                 <p style="margin-bottom: 10px;">For direct feedback, suggestions, or issues, shoot me an email:</p>
@@ -131,5 +138,23 @@
         </div>
     </div>
 
+    <!-- --- Scroll Animation JavaScript --- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll(".scroll-fade");
+            function checkScroll() {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 50) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+            window.addEventListener("scroll", checkScroll);
+            checkScroll(); 
+        });
+    </script>
+
 </body>
 </html>
+
