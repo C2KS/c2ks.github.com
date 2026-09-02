@@ -24,9 +24,11 @@
             text-align: center;
             font-weight: bold;
         }
-        .navbar a:hover {
+        .navbar a:hover,
+        .navbar a:active,
+        .navbar a:focus {
             background-color: #333;
-            color: #4caf50;
+            color: #007bff;
         }
         .content {
             padding: 40px;
@@ -47,7 +49,7 @@
             font-family: 'Agency FB', 'Arial Black', sans-serif;
             font-size: 26px;
             margin-top: 0;
-            color: #4caf50;
+            color: #007bff;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -67,6 +69,17 @@
             border-top: 1px solid #333;
             padding-top: 10px;
         }
+
+        /* --- Scroll Animation CSS --- */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -78,7 +91,8 @@
         <a href="contact.html">Contact</a>
     </div>
 
-    <div class="content">
+    <!-- The class "scroll-fade" will trigger the fade-in script -->
+    <div class="content scroll-fade">
         <h1>Welcome to My Website!</h1>
         
         <!-- Website Overview Box -->
@@ -94,12 +108,39 @@
                 <li><strong>Contact:</strong> Find out how to reach out, send feedback, or drop suggestions.</li>
             </ul>
 
+            <!-- Your custom message added directly to the dashboard -->
+            <p style="margin-top: 25px; font-style: italic; color: #888; text-align: center;">
+                "Play around, this website is a little young but it's doing good just like how I want your day to go." <br>
+                <strong style="color: #007bff;">— godly723</strong>
+            </p>
+
             <!-- Age / History tracker -->
             <div class="meta-info">
                 Project Launched: August 31, 2026
             </div>
         </div>
     </div>
+
+    <!-- --- Scroll Animation JavaScript --- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll(".scroll-fade");
+
+            function checkScroll() {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    // Checks if the element is visible in the viewport window
+                    if (rect.top < window.innerHeight - 50) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+
+            // Run check once on load, then every time the user scrolls
+            window.addEventListener("scroll", checkScroll);
+            checkScroll(); 
+        });
+    </script>
 
 </body>
 </html>
