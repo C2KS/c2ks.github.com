@@ -28,7 +28,7 @@
         .navbar a:active,
         .navbar a:focus {
             background-color: #333;
-            color: #007bff; /* Changed green to Blue */
+            color: #007bff;
         }
         .content {
             padding: 40px;
@@ -63,6 +63,17 @@
             margin-top: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.7);
         }
+
+        /* --- Scroll Animation CSS --- */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -74,16 +85,32 @@
         <a href="contact.html">Contact</a>
     </div>
 
-    <div class="content">
+    <div class="content scroll-fade">
         <div class="about-card">
             <h1>About Me</h1>
             <p>Hey! I'm a new'ish game developer learning how to code websites. Welcome to my page!</p>
             <p>I am a passionate indie game developer building the <strong>ORIGINS</strong> horror franchise using custom-modified TurboWarp engines.</p>
             
-            <!-- Fixed exact file target with relative folder sorting -->
             <img src="./steam-user.PNG" alt="My Steam Profile" class="profile-img">
         </div>
     </div>
+
+    <!-- --- Scroll Animation JavaScript --- -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll(".scroll-fade");
+            function checkScroll() {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 50) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+            window.addEventListener("scroll", checkScroll);
+            checkScroll(); 
+        });
+    </script>
 
 </body>
 </html>
