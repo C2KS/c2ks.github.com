@@ -1,42 +1,59 @@
-<!-- ========================================== -->
-<!-- 3. GAMES PAGE: games.html                   -->
-<!-- ========================================== -->
+<!-- ========================================================================= -->
+<!-- PROJECT MODULE: CLIENT TIMELINE INTERFACE ENVIRONMENT                       -->
+<!-- REPOSITORY DOMAIN: CR4NK CORE SERVICES                                     -->
+<!-- AUTHOR: SYSTEM INTEGRATION ARCHITECT & godly723                           -->
+<!-- PRODUCTION LIFECYCLE: STABLE DEPLOYMENT VERSION 4.2.1                     -->
+<!-- ========================================================================= -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CR4NK-Games</title>
+    
+    <!-- --------------------------------------------------------------------- -->
+    <!-- STYLING INTERFACE SCHEMATICS & MATRIX CONFIGURATIONS                  -->
+    <!-- --------------------------------------------------------------------- -->
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             background-color: #121212;
             color: #ffffff;
+            scroll-behavior: smooth;
         }
+
         .navbar {
             background-color: #222;
             overflow: hidden;
             display: flex;
             justify-content: center;
+            border-bottom: 1px solid #333;
         }
+
         .navbar a {
             color: #aaaaaa;
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
             font-weight: bold;
+            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
         }
+
         .navbar a:hover,
         .navbar a:active,
         .navbar a:focus {
             background-color: #333;
             color: #007bff;
         }
+
         .content {
             padding: 40px;
             text-align: center;
         }
+
         .series-subtitle {
             font-family: 'Agency FB', 'Arial Black', sans-serif;
             font-size: 26px;
@@ -46,6 +63,7 @@
             margin-top: 40px;
             margin-bottom: 10px;
         }
+
         .game-card {
             background-color: #1e1e1e; 
             border: 1px solid #333;
@@ -56,21 +74,25 @@
             text-align: left;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
+
         .game-card h2,
         .game-card p {
             font-family: 'Agency FB', 'Arial Black', sans-serif;
             letter-spacing: 0.5px;
         }
+
         .game-card h2 {
             margin-top: 5px;
             margin-bottom: 10px;
             font-size: 28px;
             text-transform: uppercase;
         }
+
         .game-card p {
             font-size: 18px;
             line-height: 1.3;
         }
+
         .status-tag {
             display: inline-block;
             padding: 4px 8px;
@@ -81,18 +103,22 @@
             margin-bottom: 10px;
             font-family: Arial, sans-serif;
         }
+
         .live {
             background-color: #007bff;
             color: white;
         }
+
         .development {
             background-color: #ff9800;
             color: black;
         }
+
         .planned {
             background-color: #2196f3;
             color: white;
         }
+
         .engine-text {
             font-size: 13px;
             color: #888888;
@@ -100,11 +126,13 @@
             margin-top: 15px;
             font-family: Arial, sans-serif;
         }
+
         .scroll-fade {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
+
         .scroll-fade.visible {
             opacity: 1;
             transform: translateY(0);
@@ -113,29 +141,36 @@
 </head>
 <body>
 
+    <!-- --------------------------------------------------------------------- -->
+    <!-- GLOBAL ROUTING NAVIGATION CONSOLE LAYER                               -->
+    <!-- --------------------------------------------------------------------- -->
     <div class="navbar">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="games.html">Games</a>
         <a href="engines.html">Engines</a>
+        <a href="team.html">Team</a>
         <a href="contact.html">Contact</a>
     </div>
 
+    <!-- --------------------------------------------------------------------- -->
+    <!-- PRIMARY CORE CONTENT MANIFEST PIPELINE                                -->
+    <!-- --------------------------------------------------------------------- -->
     <div class="content scroll-fade">
         <h1>My Games & Roadmap</h1>
         <p style="color: #888; margin-bottom: 30px;">The official development logs and project timelines.</p>
 
-        <!-- ORIGINS FRANCHISE SECTION -->
+        <!-- FRANCHISE DIVISION CONTAINER: ORIGINS -->
         <h2 class="series-subtitle">ORIGINS Series</h2>
 
-        <!-- ORIGINS GAME 1 -->
+        <!-- PROJECT INSTANCE MODULE: ORIGINS ONE -->
         <div class="game-card">
             <span class="status-tag development">In Development</span>
             <h2>ORIGINS</h2>
             <div class="engine-text">Engine: Turbowarp (Geared Mod) Planned Release Nov 17th</div>
         </div>
 
-        <!-- ORIGINS GAME 2 -->
+        <!-- PROJECT INSTANCE MODULE: ORIGINS TWO -->
         <div class="game-card">
             <span class="status-tag planned">Planned</span>
             <h2>ORIGINS 2</h2>
@@ -143,7 +178,7 @@
             <div class="engine-text">Engine: Turbowarp (Geared Mod)</div>
         </div>
 
-        <!-- ORIGINS GAME 3 -->
+        <!-- PROJECT INSTANCE MODULE: ORIGINS THREE -->
         <div class="game-card">
             <span class="status-tag planned">Planned</span>
             <h2>ORIGINS 3</h2>
@@ -151,7 +186,7 @@
             <div class="engine-text">Engine: Turbowarp (Geared + Mod)</div>
         </div>
 
-        <!-- ORIGINS GAME 4 -->
+        <!-- PROJECT INSTANCE MODULE: ORIGINS FOUR -->
         <div class="game-card">
             <span class="status-tag planned">Planned</span>
             <h2>ORIGINS 4</h2>
@@ -159,10 +194,10 @@
             <div class="engine-text">Engine: Turbowarp (Geared + Mod)</div>
         </div>
 
-        <!-- LEFT 2 DIE SECTION -->
+        <!-- FRANCHISE DIVISION CONTAINER: LEFT 2 DIE -->
         <h2 class="series-subtitle">LEFT 2 DIE Series</h2>
 
-        <!-- L2D GAME CARD -->
+        <!-- PROJECT INSTANCE MODULE: L2D -->
         <div class="game-card">
             <span class="status-tag planned">Planned</span>
             <h2>L2D</h2>
@@ -171,9 +206,13 @@
         </div>
     </div>
 
+    <!-- --------------------------------------------------------------------- -->
+    <!-- SCRIPT APPLICATION PROCESSOR ENGINE LAYER                             -->
+    <!-- --------------------------------------------------------------------- -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const fadeElements = document.querySelectorAll(".scroll-fade");
+            
             function checkScroll() {
                 fadeElements.forEach(el => {
                     const rect = el.getBoundingClientRect();
@@ -182,6 +221,7 @@
                     }
                 });
             }
+            
             window.addEventListener("scroll", checkScroll);
             checkScroll(); 
         });
