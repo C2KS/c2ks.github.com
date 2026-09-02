@@ -1,3 +1,6 @@
+<!-- ========================================== -->
+<!-- 2. ENGINES PAGE: engines.html               -->
+<!-- ========================================== -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,20 +8,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CR4NK-Engines</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; background-color: #121212; color: #ffffff; }
-        .navbar { background-color: #222; overflow: hidden; display: flex; justify-content: center; }
-        .navbar a { color: #aaaaaa; padding: 14px 20px; text-decoration: none; text-align: center; font-weight: bold; }
-        .navbar a:hover, .navbar a:active, .navbar a:focus { background-color: #333; color: #007bff; }
-        .content { padding: 40px; text-align: center; }
-        .engine-card { background-color: #1e1e1e; border: 1px solid #333; border-radius: 8px; padding: 30px; margin: 20px auto; max-width: 500px; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
-        .engine-card h2 { font-family: 'Agency FB', 'Arial Black', sans-serif; font-size: 26px; margin-top: 0; color: #007bff; text-transform: uppercase; letter-spacing: 0.5px; }
-        .engine-specs { font-size: 13px; color: #888888; font-style: italic; margin-bottom: 15px; font-family: Arial, sans-serif; }
-        .engine-card p { color: #bbbbbb; font-size: 15px; line-height: 1.6; }
-        .scroll-fade { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .scroll-fade.visible { opacity: 1; transform: translateY(0); }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .navbar {
+            background-color: #222;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar a {
+            color: #aaaaaa;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+        }
+        .navbar a:hover,
+        .navbar a:active,
+        .navbar a:focus {
+            background-color: #333;
+            color: #007bff;
+        }
+        .content {
+            padding: 40px;
+            text-align: center;
+        }
+        .engine-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 500px;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .engine-card h2 {
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 26px;
+            margin-top: 0;
+            color: #007bff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .engine-specs {
+            font-size: 13px;
+            color: #888888;
+            font-style: italic;
+            margin-bottom: 15px;
+            font-family: Arial, sans-serif;
+        }
+        .engine-card p {
+            color: #bbbbbb;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
+
     <div class="navbar">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -26,6 +87,7 @@
         <a href="engines.html">Engines</a>
         <a href="contact.html">Contact</a>
     </div>
+
     <div class="content scroll-fade">
         <h1>Custom Game Engines</h1>
         <p style="color: #888; margin-bottom: 30px;">The backend tech and frameworks driving our custom gaming projects.</p>
@@ -51,12 +113,22 @@
             <p>Our primary runtime framework. Built on top of a heavily optimized custom TurboWarp compiler layer, the standard Geared Mod allows for rapid scene transitions, high-fidelity sound cue processing, and strict jumpscare tracking variables required for atmospheric horror layouts.</p>
         </div>
     </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const fadeElements = document.querySelectorAll(".scroll-fade");
-            function checkScroll() { fadeElements.forEach(el => { const rect = el.getBoundingClientRect(); if (rect.top < window.innerHeight - 50) { el.classList.add("visible"); } }); }
-            window.addEventListener("scroll", checkScroll); checkScroll();
+            function checkScroll() {
+                fadeElements.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 50) {
+                        el.classList.add("visible");
+                    }
+                });
+            }
+            window.addEventListener("scroll", checkScroll);
+            checkScroll(); 
         });
     </script>
+
 </body>
 </html>
