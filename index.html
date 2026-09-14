@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CR4NK - Home</title>
     <style>
-        /* Base Reset & Core Theme Styles */
         * {
             margin: 0;
             padding: 0;
@@ -19,7 +18,6 @@
             line-height: 1.6;
         }
 
-        /* Navigation Bar */
         nav {
             background-color: #1a1a1a;
             padding: 1rem 2rem;
@@ -41,12 +39,12 @@
             color: #ffffff;
         }
 
-        /* Hero Banner with CR4NK Overlay Text */
+        /* Hero Banner with custom heads graphic overlay */
         .hero-banner {
             position: relative;
             width: 100%;
             height: 450px;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('image_fhq1tb.png');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('image_q0u3MB.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -65,7 +63,6 @@
             user-select: none;
         }
 
-        /* Main Content Container */
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -73,24 +70,27 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 3rem;
             color: #ffffff;
             margin-bottom: 1rem;
+            letter-spacing: 1px;
         }
 
         h2 {
-            font-size: 1.8rem;
-            color: #ffffff;
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 2rem;
+            color: #ff3333; 
             margin-bottom: 1.5rem;
-            border-bottom: 1px solid #2a2a2a;
+            border-bottom: 2px solid #ff3333;
             padding-bottom: 0.5rem;
+            letter-spacing: 1px;
         }
 
         .welcome-section {
             margin-bottom: 3rem;
         }
 
-        /* Responsive Dashboard Feature Grid */
         .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -103,6 +103,11 @@
             border: 1px solid #2a2a2a;
             padding: 1.5rem;
             border-radius: 6px;
+            transition: border-color 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #ff3333; 
         }
 
         .card strong {
@@ -112,10 +117,9 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Quote Section Styling */
         .quote-box {
             background-color: #161616;
-            border-left: 4px solid #444444;
+            border-left: 4px solid #ff3333; 
             padding: 1.5rem;
             margin-bottom: 3rem;
             font-style: italic;
@@ -129,7 +133,6 @@
             color: #ffffff;
         }
 
-        /* Footer Info */
         footer {
             margin-top: 2rem;
             padding-top: 1.5rem;
@@ -138,21 +141,14 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive Adjustments for Mobile Screens */
         @media (max-width: 768px) {
-            .hero-banner {
-                height: 280px;
-            }
-            .hero-title {
-                font-size: 4rem;
-                letter-spacing: 3px;
-            }
+            .hero-banner { height: 280px; }
+            .hero-title { font-size: 4rem; letter-spacing: 3px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Site Navigation Header -->
     <nav>
         <a href="#" class="active">Home</a>
         <a href="about.html">About</a>
@@ -162,12 +158,10 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- Visual Hero Banner with the text overlay -->
     <header class="hero-banner">
         <h1 class="hero-title">CR4NK</h1>
     </header>
 
-    <!-- Dashboard Content Context -->
     <main class="container">
         
         <section class="welcome-section">
@@ -184,7 +178,8 @@
                     <p>Return to this overview dashboard anytime.</p>
                 </div>
                 <div class="card">
-                    // ... rest of details match original ...
+                    <strong>About</strong>
+                    <p>Read details about me, my coding background, and what drives my development.</p>
                 </div>
                 <div class="card">
                     <strong>Games</strong>
@@ -205,13 +200,11 @@
             </div>
         </section>
 
-        <!-- Updated Author Reference -->
         <blockquote class="quote-box">
             <p>"Play around, this website is a little young but it's doing good just like how I want your day to go."</p>
             <span class="quote-author">— C2KS</span>
         </blockquote>
 
-        <!-- Footer Timeline Details -->
         <footer>
             <p>Project Launched: August 31, 2026</p>
         </footer>
