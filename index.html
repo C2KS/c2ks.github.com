@@ -1,177 +1,223 @@
-<!-- ========================================================================= -->
-<!-- PROJECT MODULE: CORE INDEX DASHBOARD LAYER                                 -->
-<!-- REPOSITORY DOMAIN: CR4NK CORE SERVICES                                     -->
-<!-- AUTHOR: SYSTEM INTEGRATION ARCHITECT & godly723                           -->
-<!-- PRODUCTION LIFECYCLE: STABLE DEPLOYMENT VERSION 4.2.1                     -->
-<!-- ========================================================================= -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CR4NK-Home</title>
-    
-    <!-- --------------------------------------------------------------------- -->
-    <!-- STYLING INTERFACE SCHEMATICS & MATRIX CONFIGURATIONS                  -->
-    <!-- --------------------------------------------------------------------- -->
+    <title>CR4NK - Home</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Base Reset & Core Theme Styles */
+        * {
             margin: 0;
-            background-color: #121212;
-            color: #ffffff;
-            scroll-behavior: smooth;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .navbar {
-            background-color: #222;
-            overflow: hidden;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1a1a1a;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: flex-start;
+            gap: 2rem;
+            border-bottom: 2px solid #2a2a2a;
+        }
+
+        nav a {
+            color: #aaaaaa;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            color: #ffffff;
+        }
+
+        /* Hero Banner with CR4NK Overlay Text */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 450px; /* Adjust height based on preference */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('image_fhq1tb.png');
+            background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: center;
-            border-bottom: 1px solid #333;
+            align-items: center;
         }
 
-        .navbar a {
-            color: #aaaaaa;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-            font-weight: bold;
-            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-        }
-
-        .navbar a:hover,
-        .navbar a:active,
-        .navbar a:focus {
-            background-color: #333;
-            color: #007bff;
-        }
-
-        .content {
-            padding: 40px;
-            text-align: center;
-        }
-
-        .overview-card {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 30px;
-            margin: 20px auto;
-            max-width: 500px;
-            text-align: left;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-        }
-
-        .overview-card h2 {
+        .hero-title {
             font-family: 'Agency FB', 'Arial Black', sans-serif;
-            font-size: 26px;
-            margin-top: 0;
-            color: #007bff;
+            font-weight: bold;
+            font-size: 6.5rem;
+            color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 6px;
+            text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.85);
+            user-select: none;
         }
 
-        .overview-card p,
-        .overview-card li {
-            color: #bbbbbb;
-            font-size: 15px;
-            line-height: 1.5;
+        /* Main Content Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
         }
 
-        .overview-card ul {
-            padding-left: 20px;
-            margin-bottom: 0;
+        h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
         }
 
-        .meta-info {
-            font-size: 12px;
+        h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 0.5rem;
+        }
+
+        .welcome-section {
+            margin-bottom: 3rem;
+        }
+
+        /* Responsive Dashboard Feature Grid */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            padding: 1.5rem;
+            border-radius: 6px;
+        }
+
+        .card strong {
+            color: #ffffff;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Quote Section Styling */
+        .quote-box {
+            background-color: #161616;
+            border-left: 4px solid #444444;
+            padding: 1.5rem;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .quote-author {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        /* Footer Info */
+        footer {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #2a2a2a;
             color: #666666;
-            margin-top: 20px;
-            border-top: 1px solid #333;
-            padding-top: 10px;
+            font-size: 0.9rem;
         }
 
-        .scroll-fade {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .scroll-fade.visible {
-            opacity: 1;
-            transform: translateY(0);
+        /* Responsive Adjustments for Mobile Screens */
+        @media (max-width: 768px) {
+            .hero-banner {
+                height: 280px;
+            }
+            .hero-title {
+                font-size: 4rem;
+                letter-spacing: 3px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- --------------------------------------------------------------------- -->
-    <!-- GLOBAL ROUTING NAVIGATION CONSOLE LAYER                               -->
-    <!-- --------------------------------------------------------------------- -->
-    <div class="navbar">
-        <a href="index.html">Home</a>
+    <!-- Site Navigation Header -->
+    <nav>
+        <a href="#" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="games.html">Games</a>
         <a href="engines.html">Engines</a>
         <a href="team.html">Team</a>
         <a href="contact.html">Contact</a>
-    </div>
+    </nav>
 
-    <!-- --------------------------------------------------------------------- -->
-    <!-- PRIMARY CORE CONTENT MANIFEST PIPELINE                                -->
-    <!-- --------------------------------------------------------------------- -->
-    <div class="content scroll-fade">
-        <h1>Welcome to My Website!</h1>
+    <!-- Visual Hero Banner with the requested visual overlay -->
+    <header class="hero-banner">
+        <h1 class="hero-title">CR4NK</h1>
+    </header>
+
+    <!-- Dashboard Content Context (Preserved completely from original source files) -->
+    <main class="container">
         
-        <div class="overview-card">
-            <h2>Site Overview</h2>
+        <section class="welcome-section">
+            <h1>Welcome to My Website!</h1>
             <p>Welcome to the official hub for my game development projects. I built this platform from scratch to showcase my work and share timeline roadmaps for my upcoming game releases.</p>
-            
+        </section>
+
+        <section>
             <h2>How to Use the Site</h2>
-            <ul>
-                <li><strong>Home:</strong> Return to this overview dashboard anytime.</li>
-                <li><strong>About:</strong> Read details about me, my coding background, and what drives my development.</li>
-                <li><strong>Games:</strong> Check out the official ORIGINS franchise roadmap and project timelines.</li>
-                <li><strong>Engines:</strong> Explore the mechanics, frameworks, and architecture powering our code.</li>
-                <li><strong>Team:</strong> Meet the developers guiding architecture and franchise features.</li>
-                <li><strong>Contact:</strong> Find out how to reach out, send feedback, or drop suggestions.</li>
-            </ul>
-
-            <p style="margin-top: 25px; font-style: italic; color: #888; text-align: center;">
-                "Play around, this website is a little young but it's doing good just like how I want your day to go."
-                <br>
-                <strong style="color: #007bff;">— godly723</strong>
-            </p>
-
-            <div class="meta-info">
-                Project Launched: August 31, 2026
+            
+            <div class="grid-layout">
+                <div class="card">
+                    <strong>Home</strong>
+                    <p>Return to this overview dashboard anytime.</p>
+                </div>
+                <div class="card">
+                    <strong>About</strong>
+                    <p>Read details about me, my coding background, and what drives my development.</p>
+                </div>
+                <div class="card">
+                    <strong>Games</strong>
+                    <p>Check out the official ORIGINS franchise roadmap and project timelines.</p>
+                </div>
+                <div class="card">
+                    <strong>Engines</strong>
+                    <p>Explore the mechanics, frameworks, and architecture powering our code.</p>
+                </div>
+                <div class="card">
+                    <strong>Team</strong>
+                    <p>Meet the developers guiding architecture and franchise features.</p>
+                </div>
+                <div class="card">
+                    <strong>Contact</strong>
+                    <p>Find out how to reach out, send feedback, or drop suggestions.</p>
+                </div>
             </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- --------------------------------------------------------------------- -->
-    <!-- SCRIPT APPLICATION PROCESSOR ENGINE LAYER                             -->
-    <!-- --------------------------------------------------------------------- -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const fadeElements = document.querySelectorAll(".scroll-fade");
-            
-            function checkScroll() {
-                fadeElements.forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight - 50) {
-                        el.classList.add("visible");
-                    }
-                });
-            }
-            
-            window.addEventListener("scroll", checkScroll);
-            checkScroll(); 
-        });
-    </script>
+        <!-- Dynamic Content Quote Block -->
+        <blockquote class="quote-box">
+            <p>"Play around, this website is a little young but it's doing good just like how I want your day to go."</p>
+            <span class="quote-author">— godly723</span>
+        </blockquote>
+
+        <!-- Footer Timeline Details -->
+        <footer>
+            <p>Project Launched: August 31, 2026</p>
+        </footer>
+
+    </main>
 
 </body>
 </html>
