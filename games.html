@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CR4NK - Games & Roadmap</title>
     <style>
-        /* Base Reset & Core Theme Styles */
         * {
             margin: 0;
             padding: 0;
@@ -19,7 +18,6 @@
             line-height: 1.6;
         }
 
-        /* Navigation Bar */
         nav {
             background-color: #1a1a1a;
             padding: 1rem 2rem;
@@ -41,7 +39,6 @@
             color: #ffffff;
         }
 
-        /* Main Content Container */
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -49,12 +46,15 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 3rem;
             color: #ffffff;
             margin-bottom: 2rem;
+            letter-spacing: 1px;
         }
 
         h2 {
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
             font-size: 2rem;
             margin-top: 2.5rem;
             margin-bottom: 1.5rem;
@@ -64,16 +64,15 @@
         }
 
         .origins-title {
-            color: #ff3333; /* Crimson Accent for ORIGINS horror series */
+            color: #ff3333; 
             border-left: 4px solid #ff3333;
         }
 
         .l2d-title {
-            color: #44ff44; /* Neon Green Accent for L2D survival-shooter series */
+            color: #44ff44; 
             border-left: 4px solid #44ff44;
         }
 
-        /* Game Cards Layout Grid */
         .games-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -81,7 +80,6 @@
             margin-bottom: 3.5rem;
         }
 
-        /* Game Card Base Setup */
         .game-card {
             position: relative;
             border: 1px solid #333333;
@@ -108,7 +106,6 @@
             border-color: #44ff44;
         }
 
-        /* Underlay Background Image Base Pseudo-class */
         .game-card::before {
             content: "";
             position: absolute;
@@ -118,7 +115,6 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            /* Dim filter ensures high text contrast against your game scenes */
             filter: brightness(0.25) contrast(1.1) saturate(0.8); 
             z-index: 1;
             transition: filter 0.3s ease;
@@ -128,14 +124,13 @@
             filter: brightness(0.4) contrast(1.15) saturate(1);
         }
 
-        /* Assigning Individual Image Underlays mapping to your file inputs */
-        .card-origins1::before { background-image: url('image_74vCy6.png'); }
-        .card-origins2::before { background-image: url('image_oaSJwa.png'); }
-        .card-origins3::before { background-image: url('image_1lD3vt.png'); }
-        .card-origins4::before { background-image: url('image_vkPY5s.png'); }
-        .card-l2d::before      { background-image: url('image_8hVtz1.png'); }
+        /* Mapping individual card files based on your updated image list */
+        .card-origins1::before { background-image: url('image_TdiorH.png'); }
+        .card-origins2::before { background-image: url('image_lTgy4x.png'); }
+        .card-origins3::before { background-image: url('image_EOlBq7.png'); }
+        .card-origins4::before { background-image: url('image__FEuGH.png'); }
+        .card-l2d::before      { background-image: url('image_jaCqGO.png'); }
 
-        /* Card Content Layer Box Above Underlay */
         .game-card-content {
             position: relative;
             z-index: 2;
@@ -143,10 +138,12 @@
         }
 
         .game-card h3 {
-            font-size: 1.6rem;
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 1.8rem;
             color: #ffffff;
             margin-bottom: 0.5rem;
             text-shadow: 0 2px 5px rgba(0,0,0,0.95);
+            letter-spacing: 1px;
         }
 
         .status-badge {
@@ -193,7 +190,6 @@
 </head>
 <body>
 
-    <!-- Site Navigation Header -->
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -203,17 +199,14 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <!-- Main Content Container -->
     <main class="container">
         
         <h1>My Games & Roadmap</h1>
 
-        <!-- ORIGINS FRANCHISE SECTION -->
         <section class="origins-group">
             <h2 class="origins-title">ORIGINS Series</h2>
             <div class="games-grid">
                 
-                <!-- ORIGINS 1 -->
                 <div class="game-card card-origins1">
                     <div class="game-card-content">
                         <span class="status-badge in-development">In Development</span>
@@ -223,7 +216,6 @@
                     </div>
                 </div>
 
-                <!-- ORIGINS 2 -->
                 <div class="game-card card-origins2">
                     <div class="game-card-content">
                         <span class="status-badge">Planned</span>
@@ -233,7 +225,6 @@
                     </div>
                 </div>
 
-                <!-- ORIGINS 3 -->
                 <div class="game-card card-origins3">
                     <div class="game-card-content">
                         <span class="status-badge">Planned</span>
@@ -243,7 +234,6 @@
                     </div>
                 </div>
 
-                <!-- ORIGINS 4 -->
                 <div class="game-card card-origins4">
                     <div class="game-card-content">
                         <span class="status-badge">Planned</span>
@@ -256,12 +246,10 @@
             </div>
         </section>
 
-        <!-- LEFT 2 DIE FRANCHISE SECTION -->
         <section class="l2d-group">
             <h2 class="l2d-title">LEFT 2 DIE Series</h2>
             <div class="games-grid">
                 
-                <!-- L2D -->
                 <div class="game-card card-l2d">
                     <div class="game-card-content">
                         <span class="status-badge">Planned</span>
@@ -278,3 +266,4 @@
 
 </body>
 </html>
+
