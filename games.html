@@ -56,13 +56,21 @@
 
         h2 {
             font-size: 2rem;
-            color: #ff3333; /* Crimson Accent for Series Headings */
             margin-top: 2.5rem;
             margin-bottom: 1.5rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-left: 4px solid #ff3333;
             padding-left: 0.75rem;
+        }
+
+        .origins-title {
+            color: #ff3333; /* Crimson Accent for ORIGINS horror series */
+            border-left: 4px solid #ff3333;
+        }
+
+        .l2d-title {
+            color: #44ff44; /* Neon Green Accent for L2D survival-shooter series */
+            border-left: 4px solid #44ff44;
         }
 
         /* Game Cards Layout Grid */
@@ -90,7 +98,14 @@
 
         .game-card:hover {
             transform: translateY(-4px);
+        }
+
+        .origins-group .game-card:hover {
             border-color: #ff3333;
+        }
+
+        .l2d-group .game-card:hover {
+            border-color: #44ff44;
         }
 
         /* Underlay Background Image Base Pseudo-class */
@@ -103,7 +118,7 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            /* Dim filter protects text visibility over dark gameplay scenes */
+            /* Dim filter ensures high text contrast against your game scenes */
             filter: brightness(0.25) contrast(1.1) saturate(0.8); 
             z-index: 1;
             transition: filter 0.3s ease;
@@ -118,11 +133,7 @@
         .card-origins2::before { background-image: url('image_oaSJwa.png'); }
         .card-origins3::before { background-image: url('image_1lD3vt.png'); }
         .card-origins4::before { background-image: url('image_vkPY5s.png'); }
-        
-        /* Fallback placeholder underlay for non-franchise titles */
-        .card-fallback::before {
-            background-image: linear-gradient(45deg, #1f1f1f, #2a2a2a);
-        }
+        .card-l2d::before      { background-image: url('image_8hVtz1.png'); }
 
         /* Card Content Layer Box Above Underlay */
         .game-card-content {
@@ -198,8 +209,8 @@
         <h1>My Games & Roadmap</h1>
 
         <!-- ORIGINS FRANCHISE SECTION -->
-        <section>
-            <h2>ORIGINS Series</h2>
+        <section class="origins-group">
+            <h2 class="origins-title">ORIGINS Series</h2>
             <div class="games-grid">
                 
                 <!-- ORIGINS 1 -->
@@ -246,12 +257,12 @@
         </section>
 
         <!-- LEFT 2 DIE FRANCHISE SECTION -->
-        <section>
-            <h2>LEFT 2 DIE Series</h2>
+        <section class="l2d-group">
+            <h2 class="l2d-title">LEFT 2 DIE Series</h2>
             <div class="games-grid">
                 
                 <!-- L2D -->
-                <div class="game-card card-fallback">
+                <div class="game-card card-l2d">
                     <div class="game-card-content">
                         <span class="status-badge">Planned</span>
                         <h3>L2D</h3>
