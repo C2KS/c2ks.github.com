@@ -11,96 +11,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>CR4NK-Contact</title>
+    <title>CR4NK - Contact</title>
     
     <!-- --------------------------------------------------------------------- -->
     <!-- STYLING INTERFACE SCHEMATICS & MATRIX CONFIGURATIONS                  -->
     <!-- --------------------------------------------------------------------- -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #121212;
-            color: #ffffff;
+            color: #e0e0e0;
+            line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        .navbar {
-            background-color: #222;
-            overflow: hidden;
+        nav {
+            background-color: #1a1a1a;
+            padding: 1rem 2rem;
             display: flex;
-            justify-content: center;
-            border-bottom: 1px solid #333;
+            justify-content: flex-start;
+            gap: 2rem;
+            border-bottom: 2px solid #2a2a2a;
         }
 
-        .navbar a {
+        nav a {
             color: #aaaaaa;
-            padding: 14px 20px;
             text-decoration: none;
-            text-align: center;
-            font-weight: bold;
-            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
         }
 
-        .navbar a:hover,
-        .navbar a:active,
-        .navbar a:focus {
-            background-color: #333;
-            color: #007bff;
+        nav a:hover, nav a.active {
+            color: #ffffff;
         }
 
-        .content {
-            padding: 40px;
-            text-align: center;
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
         }
 
-        .contact-card {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 30px;
-            margin: 20px auto;
-            max-width: 450px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-            text-align: center;
-        }
-
-        .contact-card h1 {
+        h1 {
             font-family: 'Agency FB', 'Arial Black', sans-serif;
-            font-size: 32px;
-            margin-top: 0;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .contact-card p {
-            color: #bbbbbb;
-            font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 25px;
-        }
-
-        .youtube-btn {
-            display: inline-block;
-            background-color: #ff0000;
-            color: white;
-            font-family: 'Agency FB', 'Arial Black', sans-serif;
-            font-size: 20px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-decoration: none;
-            padding: 12px 30px;
-            border-radius: 4px;
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
             letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.2);
-            transition: background 0.2s, transform 0.1s;
-            margin-bottom: 15px;
-            width: 80%;
         }
 
-        .youtube-btn:hover {
-            background-color: #cc0000;
-            transform: scale(1.03);
+        h2 {
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 2rem;
+            color: #ff3333; 
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #ff3333;
+            padding-bottom: 0.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .welcome-section {
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            padding: 2.5rem;
+            border-radius: 6px;
+            transition: border-color 0.3s ease;
+            max-width: 550px;
+            margin-bottom: 3.5rem;
+        }
+
+        .card:hover {
+            border-color: #ff3333; 
+        }
+
+        .card p {
+            color: #bbbbbb;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
         }
 
         .discord-btn {
@@ -108,7 +106,7 @@
             background-color: #5865F2;
             color: white;
             font-family: 'Agency FB', 'Arial Black', sans-serif;
-            font-size: 20px;
+            font-size: 1.25rem;
             font-weight: bold;
             text-transform: uppercase;
             text-decoration: none;
@@ -117,41 +115,44 @@
             letter-spacing: 1px;
             box-shadow: 0 4px 10px rgba(88, 101, 242, 0.2);
             transition: background 0.2s, transform 0.1s;
-            margin-bottom: 25px;
-            width: 80%;
+            margin-bottom: 2rem;
+            width: 100%;
+            text-align: center;
         }
 
         .discord-btn:hover {
             background-color: #4752C4;
-            transform: scale(1.03);
+            transform: scale(1.02);
         }
 
         .email-section {
-            border-top: 1px solid #333;
-            padding-top: 20px;
-            margin-top: 10px;
-        }
-
-        .email-section h2 {
-            font-family: 'Agency FB', 'Arial Black', sans-serif;
-            font-size: 24px;
-            margin-top: 0;
-            text-transform: uppercase;
-            color: #007bff;
+            border-top: 1px solid #2a2a2a;
+            padding-top: 1.5rem;
+            margin-top: 1rem;
         }
 
         .email-link {
             color: #ffffff;
-            font-size: 18px;
+            font-size: 1.15rem;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.2s ease;
         }
 
         .email-link:hover {
-            color: #007bff;
+            color: #ff3333;
             text-decoration: underline;
         }
 
+        footer {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #2a2a2a;
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        /* JavaScript Scroll Animation Layouts */
         .scroll-fade {
             opacity: 0;
             transform: translateY(20px);
@@ -169,38 +170,45 @@
     <!-- --------------------------------------------------------------------- -->
     <!-- GLOBAL ROUTING NAVIGATION CONSOLE LAYER                               -->
     <!-- --------------------------------------------------------------------- -->
-    <div class="navbar">
+    <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="games.html">Games</a>
         <a href="engines.html">Engines</a>
         <a href="team.html">Team</a>
-        <a href="contact.html">Contact</a>
-    </div>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
 
     <!-- --------------------------------------------------------------------- -->
     <!-- PRIMARY CORE CONTENT MANIFEST PIPELINE                                -->
     <!-- --------------------------------------------------------------------- -->
-    <div class="content scroll-fade">
-        <div class="contact-card">
+    <main class="container scroll-fade">
+        
+        <section class="welcome-section">
             <h1>Contact & Socials</h1>
-            <p>Want to check out game development logs, trailers, or stay updated on the ORIGINS universe? Check out my channel!</p>
-            
-            <a href="https://youtube.com" target="_blank" class="youtube-btn">
-                Visit My YouTube Channel
-            </a>
+            <p style="color: #888888;">Get in touch or join the online hub community.</p>
+        </section>
 
+        <section class="card">
+            <h2>Community Hub</h2>
+            <p>Want to hang out with other players, discuss upcoming roadmap releases, or stay updated on the ORIGINS universe?</p>
+            
             <a href="https://discord.gg" target="_blank" class="discord-btn">
                 Join the Discord Server
             </a>
 
             <div class="email-section">
                 <h2>Business & Inquiries</h2>
-                <p style="margin-bottom: 10px;">For direct feedback, suggestions, or issues, shoot me an email:</p>
+                <p style="margin-bottom: 10px;">For direct feedback, suggestions, or technical issues, shoot over a message:</p>
                 <a href="mailto:Blair.coley@colesons.com" class="email-link">Blair.coley@colesons.com</a>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <footer>
+            <p>Project Launched: August 31, 2026</p>
+        </footer>
+
+    </main>
 
     <!-- --------------------------------------------------------------------- -->
     <!-- SCRIPT APPLICATION PROCESSOR ENGINE LAYER                             -->
