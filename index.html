@@ -98,16 +98,26 @@
             margin-bottom: 3.5rem;
         }
 
+        /* Card Anchor Wrapper Styles */
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
         .card {
             background-color: #1a1a1a;
             border: 1px solid #2a2a2a;
             padding: 1.5rem;
             border-radius: 6px;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.3s ease, transform 0.2s ease;
+            height: 100%;
         }
 
-        .card:hover {
+        .card-link:hover .card {
             border-color: #ff3333; 
+            cursor: pointer;
+            transform: translateY(-2px);
         }
 
         .card strong {
@@ -150,7 +160,7 @@
 <body>
 
     <nav>
-        <a href="#" class="active">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="games.html">Games</a>
         <a href="engines.html">Engines</a>
@@ -173,30 +183,53 @@
             <h2>How to Use the Site</h2>
             
             <div class="grid-layout">
-                <div class="card">
-                    <strong>Home</strong>
-                    <p>Return to this overview dashboard anytime.</p>
-                </div>
-                <div class="card">
-                    <strong>About</strong>
-                    <p>Read details about me, my coding background, and what drives my development.</p>
-                </div>
-                <div class="card">
-                    <strong>Games</strong>
-                    <p>Check out the official ORIGINS franchise roadmap and project timelines.</p>
-                </div>
-                <div class="card">
-                    <strong>Engines</strong>
-                    <p>Explore the mechanics, frameworks, and architecture powering our code.</p>
-                </div>
-                <div class="card">
-                    <strong>Team</strong>
-                    <p>Meet the developers guiding architecture and franchise features.</p>
-                </div>
-                <div class="card">
-                    <strong>Contact</strong>
-                    <p>Find out how to reach out, send feedback, or drop suggestions.</p>
-                </div>
+                <!-- LINKED CARD: HOME -->
+                <a href="index.html" class="card-link">
+                    <div class="card">
+                        <strong>Home</strong>
+                        <p>Return to this overview dashboard anytime.</p>
+                    </div>
+                </a>
+
+                <!-- LINKED CARD: ABOUT -->
+                <a href="about.html" class="card-link">
+                    <div class="card">
+                        <strong>About</strong>
+                        <p>Read details about me, my coding background, and what drives my development.</p>
+                    </div>
+                </a>
+
+                <!-- LINKED CARD: GAMES -->
+                <a href="games.html" class="card-link">
+                    <div class="card">
+                        <strong>Games</strong>
+                        <p>Check out the official ORIGINS franchise roadmap and project timelines.</p>
+                    </div>
+                </a>
+
+                <!-- LINKED CARD: ENGINES -->
+                <a href="engines.html" class="card-link">
+                    <div class="card">
+                        <strong>Engines</strong>
+                        <p>Explore the mechanics, frameworks, and architecture powering our code.</p>
+                    </div>
+                </a>
+
+                <!-- LINKED CARD: TEAM -->
+                <a href="team.html" class="card-link">
+                    <div class="card">
+                        <strong>Team</strong>
+                        <p>Meet the developers guiding architecture and franchise features.</p>
+                    </div>
+                </a>
+
+                <!-- LINKED CARD: CONTACT -->
+                <a href="contact.html" class="card-link">
+                    <div class="card">
+                        <strong>Contact</strong>
+                        <p>Find out how to reach out, send feedback, or drop suggestions.</p>
+                    </div>
+                </a>
             </div>
         </section>
 
