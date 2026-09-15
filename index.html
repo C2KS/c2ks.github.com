@@ -39,13 +39,17 @@
             color: #ffffff;
         }
 
-        /* Updated to target your iPhone file name exactly */
+        /* Dual-fallback background structure handles case-sensitivity issues automatically */
         .hero-banner {
             position: relative;
             width: 100%;
             height: 450px;
             background-color: #161616; 
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('IMG_2550.png');
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), 
+                url('IMG_2550.png'), 
+                url('IMG_2550.PNG'),
+                url('img_2550.png');
             background-size: cover;
             background-position: center 25%; 
             background-repeat: no-repeat;
