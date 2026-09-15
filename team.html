@@ -35,7 +35,7 @@
             transition: color 0.3s ease;
         }
 
-        nav a:hover, nav a.active {
+        nav nav a:hover, nav a.active {
             color: #ffffff;
         }
 
@@ -63,6 +63,13 @@
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        /* Highlight border for C2KS to support breast cancer awareness */
+        .member-card.awareness-card {
+            border-color: #FF69B4;
+            box-shadow: 0 4px 20px rgba(255, 105, 180, 0.15);
         }
 
         .member-card h2 {
@@ -78,6 +85,14 @@
             font-weight: bold;
             letter-spacing: 1px;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Specific text color for C2KS */
+        .role-title.awareness {
+            color: #FF69B4;
         }
 
         .member-card p {
@@ -102,10 +117,10 @@
 
         <div class="team-grid">
             
-            <!-- Updated Profile Card -->
-            <div class="member-card">
+            <!-- Updated Profile Card with Ribbon next to Founder & Pink Border Highlight -->
+            <div class="member-card awareness-card">
                 <h2>C2KS</h2>
-                <div class="role-title">Founder</div>
+                <div class="role-title awareness">Founder <span>🎀</span></div>
                 <p>C2KS is the Founder of CR4NK, ORIGINS and L2D. He is the brains of this dream, directing overall production architecture, framework modifications, and custom engine setups.</p>
             </div>
 
