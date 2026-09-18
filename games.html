@@ -63,14 +63,9 @@
             padding-left: 0.75rem;
         }
 
-        .origins-title {
-            color: #ff3333; 
-            border-left: 4px solid #ff3333;
-        }
-
-        .l2d-title {
-            color: #44ff44; 
-            border-left: 4px solid #44ff44;
+        .hl2d-title {
+            color: #F7931E; 
+            border-left: 4px solid #F7931E;
         }
 
         .games-grid {
@@ -96,14 +91,7 @@
 
         .game-card:hover {
             transform: translateY(-4px);
-        }
-
-        .origins-group .game-card:hover {
-            border-color: #ff3333;
-        }
-
-        .l2d-group .game-card:hover {
-            border-color: #44ff44;
+            border-color: #F7931E; /* Half-Life Orange Outline on Hover */
         }
 
         .game-card::before {
@@ -124,12 +112,8 @@
             filter: brightness(0.4) contrast(1.15) saturate(1);
         }
 
-        /* Mapping individual card files based on your updated image list */
-        .card-origins1::before { background-image: url('image_TdiorH.png'); }
-        .card-origins2::before { background-image: url('image_lTgy4x.png'); }
-        .card-origins3::before { background-image: url('image_EOlBq7.png'); }
-        .card-origins4::before { background-image: url('image__FEuGH.png'); }
-        .card-l2d::before      { background-image: url('image_jaCqGO.png'); }
+        /* Using your existing background image token from the original card */
+        .card-hl2d::before { background-image: url('image_jaCqGO.png'); }
 
         .game-card-content {
             position: relative;
@@ -158,19 +142,6 @@
             background-color: #222222;
             color: #aaaaaa;
             border: 1px solid #444444;
-        }
-
-        .status-badge.in-development {
-            background-color: rgba(255, 153, 0, 0.15);
-            color: #ff9900;
-            border: 1px solid #ff9900;
-        }
-
-        .game-card p {
-            color: #cccccc;
-            font-size: 0.95rem;
-            margin-bottom: 1.25rem;
-            text-shadow: 0 2px 5px rgba(0,0,0,0.95);
         }
 
         .engine-info {
@@ -203,59 +174,16 @@
         
         <h1>My Games & Roadmap</h1>
 
-        <section class="origins-group">
-            <h2 class="origins-title">ORIGINS Series</h2>
+        <section class="hl2d-group">
+            <h2 class="hl2d-title">Half-Life 2D Series</h2>
             <div class="games-grid">
                 
-                <div class="game-card card-origins1">
-                    <div class="game-card-content">
-                        <span class="status-badge in-development">In Development</span>
-                        <h3>ORIGINS</h3>
-                        <p>Planned Release: Nov 17th</p>
-                        <div class="engine-info">Engine: <strong>Turbowarp (Geared Mod)</strong></div>
-                    </div>
-                </div>
-
-                <div class="game-card card-origins2">
+                <div class="game-card card-hl2d">
                     <div class="game-card-content">
                         <span class="status-badge">Planned</span>
-                        <h3>ORIGINS 2</h3>
-                        <p>The 2nd installment will bring a scarier experience with new animatronics, storylines, and more.</p>
-                        <div class="engine-info">Engine: <strong>Turbowarp (Geared Mod)</strong></div>
-                    </div>
-                </div>
-
-                <div class="game-card card-origins3">
-                    <div class="game-card-content">
-                        <span class="status-badge">Planned</span>
-                        <h3>ORIGINS 3</h3>
-                        <p>Closer to the end but further, yet the light starts to dim.</p>
-                        <div class="engine-info">Engine: <strong>Turbowarp (Geared + Mod)</strong></div>
-                    </div>
-                </div>
-
-                <div class="game-card card-origins4">
-                    <div class="game-card-content">
-                        <span class="status-badge">Planned</span>
-                        <h3>ORIGINS 4</h3>
-                        <p>Dark at night, dark at day. The light doesn't shine when there's no color.</p>
-                        <div class="engine-info">Engine: <strong>Turbowarp (Geared + Mod)</strong></div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="l2d-group">
-            <h2 class="l2d-title">LEFT 2 DIE Series</h2>
-            <div class="games-grid">
-                
-                <div class="game-card card-l2d">
-                    <div class="game-card-content">
-                        <span class="status-badge">Planned</span>
-                        <h3>L2D</h3>
-                        <p>An intense zombie survival shooter built to push custom gameplay mechanics to the limit.</p>
-                        <div class="engine-info">Engine: <strong>Geared 2 (Featuring upgraded physics system)</strong></div>
+                        <h3>Half-Life 2D</h3>
+                        <p>A thrilling top-down tribute and throwback to the legendary 1998 Half-Life universe.</p>
+                        <div class="engine-info">Engine: <strong>Geared 2</strong></div>
                     </div>
                 </div>
 
@@ -263,7 +191,5 @@
         </section>
 
     </main>
-
 </body>
 </html>
-
