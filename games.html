@@ -53,21 +53,6 @@
             letter-spacing: 1px;
         }
 
-        h2 {
-            font-family: 'Agency FB', 'Arial Black', sans-serif;
-            font-size: 2rem;
-            margin-top: 2.5rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding-left: 0.75rem;
-        }
-
-        .hl2d-title {
-            color: #F7931E; 
-            border-left: 4px solid #F7931E;
-        }
-
         .games-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -77,7 +62,7 @@
 
         .game-card {
             position: relative;
-            border: 1px solid #333333;
+            border: 1px solid #ff3333; 
             border-radius: 8px;
             overflow: hidden;
             min-height: 260px;
@@ -91,7 +76,7 @@
 
         .game-card:hover {
             transform: translateY(-4px);
-            border-color: #F7931E; /* Half-Life Orange Outline on Hover */
+            border-color: #ff1a1a; 
         }
 
         .game-card::before {
@@ -112,8 +97,7 @@
             filter: brightness(0.4) contrast(1.15) saturate(1);
         }
 
-        /* Using your existing background image token from the original card */
-        .card-hl2d::before { background-image: url('image_jaCqGO.png'); }
+        .card-tfh::before { background-image: url('image_jaCqGO.png'); }
 
         .game-card-content {
             position: relative;
@@ -139,9 +123,9 @@
             padding: 0.25rem 0.6rem;
             border-radius: 4px;
             margin-bottom: 1rem;
-            background-color: rgba(247, 147, 30, 0.15); /* Half-Life Orange background tint */
-            color: #F7931E; /* Half-Life Orange text */
-            border: 1px solid #F7931E; /* Half-Life Orange border */
+            background-color: rgba(255, 51, 51, 0.15); 
+            color: #ff3333; 
+            border: 1px solid #ff3333; 
         }
 
         .engine-info {
@@ -174,21 +158,18 @@
         
         <h1>My Games & Roadmap</h1>
 
-        <section class="hl2d-group">
-            <h2 class="hl2d-title">Half-Life 2D Series</h2>
-            <div class="games-grid">
-                
-                <div class="game-card card-hl2d">
-                    <div class="game-card-content">
-                        <span class="status-badge">In Development</span>
-                        <h3>Half-Life 2D</h3>
-                        <p>A thrilling side-scrolling tribute and throwback to the legendary 1998 Half-Life universe.</p>
-                        <div class="engine-info">Engine: <strong>Geared 2</strong></div>
-                    </div>
+        <div class="games-grid">
+            
+            <div class="game-card card-tfh">
+                <div class="game-card-content">
+                    <span class="status-badge">In Development</span>
+                    <h3>The Final Hour</h3>
+                    <p>A psychological horror game following an amputated US Marine civilian in City 17 struggling with war trauma and sleep paralysis. Face a grim descent toward ultimate despair, or attempt to break the cycle by seeking refuge with your K9 companion within the Resistance.</p>
+                    <div class="engine-info">Engine: <strong>Geared 2</strong></div>
                 </div>
-
             </div>
-        </section>
+
+        </div>
 
     </main>
 </body>
