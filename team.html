@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CR4NK - Development Team</title>
+    <title>CR4NK - Team</title>
     <style>
         * {
             margin: 0;
@@ -18,16 +18,46 @@
             line-height: 1.6;
         }
 
+        /* Responsive Navigation Bar Styling */
         nav {
             background-color: #1a1a1a;
             padding: 1rem 2rem;
             display: flex;
             justify-content: flex-start;
+            align-items: center;
             gap: 2rem;
             border-bottom: 2px solid #2a2a2a;
+            position: relative;
+            z-index: 100;
         }
 
-        nav a {
+        .menu-toggle {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
             color: #aaaaaa;
             text-decoration: none;
             font-weight: 600;
@@ -35,7 +65,7 @@
             transition: color 0.3s ease;
         }
 
-        nav nav a:hover, nav a.active {
+        .nav-links a:hover, .nav-links a.active {
             color: #ffffff;
         }
 
@@ -46,96 +76,141 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 3rem;
             color: #ffffff;
             margin-bottom: 2rem;
+            letter-spacing: 1px;
         }
 
+        /* Team Section Styles */
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .member-card {
+        .team-card {
             background-color: #1a1a1a;
             border: 1px solid #2a2a2a;
-            padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: border-color 0.3s ease;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: border-color 0.3s ease, transform 0.3s ease;
         }
 
-        /* Highlight border for C2KS to support breast cancer awareness */
-        .member-card.awareness-card {
-            border-color: #FF69B4;
-            box-shadow: 0 4px 20px rgba(255, 105, 180, 0.15);
+        .team-card:hover {
+            border-color: #ff3333;
+            transform: translateY(-2px);
         }
 
-        .member-card h2 {
-            font-size: 1.6rem;
+        .team-card h2 {
+            font-family: 'Agency FB', 'Arial Black', sans-serif;
+            font-size: 1.8rem;
             color: #ffffff;
-            margin-bottom: 0.25rem;
+            letter-spacing: 1px;
         }
 
-        .role-title {
-            color: #ff3333;
-            font-size: 0.9rem;
+        .role-badge {
+            display: inline-block;
+            align-self: flex-start;
+            font-size: 0.75rem;
             text-transform: uppercase;
             font-weight: bold;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid #444;
+            color: #aaaaaa;
+            border-radius: 4px;
         }
 
-        /* Specific text color for C2KS */
-        .role-title.awareness {
-            color: #FF69B4;
-        }
-
-        .member-card p {
-            color: #cccccc;
+        .team-card p {
+            color: #aaaaaa;
             font-size: 0.95rem;
+        }
+
+        /* Mobile Breakpoint for Hamburger Menu */
+        @media (max-width: 768px) {
+            nav {
+                justify-content: space-between;
+                padding: 1rem 1.5rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #1a1a1a;
+                padding: 1rem 1.5rem;
+                gap: 1.5rem;
+                border-bottom: 2px solid #2a2a2a;
+            }
+
+            .menu-toggle:checked ~ .nav-links {
+                display: flex;
+            }
+
+            .menu-toggle:checked ~ .hamburger span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .menu-toggle:checked ~ .hamburger span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle:checked ~ .hamburger span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="games.html">Games</a>
-        <a href="engines.html">Engines</a>
-        <a href="#" class="active">Team</a>
-        <a href="contact.html">Contact</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="games.html">Games</a>
+            <a href="engines.html">Engines</a>
+            <a href="#" class="active">Team</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </nav>
 
     <main class="container">
-        <h1>Development Team</h1>
-
+        <h1>Meet the Team</h1>
+        
         <div class="team-grid">
-            
-            <!-- Updated Profile Card with Ribbon next to Founder & Pink Border Highlight -->
-            <div class="member-card awareness-card">
+            <!-- Paid's Card -->
+            <div class="team-card">
+                <h2>PaidPrawnYT</h2>
+                <span class="role-badge">Game Designer & Music Dev</span>
+                <p>Paid helps design Levels in our game amd also creates the games Soundtrack!</p>
+            </div>
+
+            <!-- C2KS's Card (Now fully matches Paid's design) -->
+            <div class="team-card">
                 <h2>C2KS</h2>
-                <div class="role-title awareness">Founder <span>🎀</span></div>
-                <p>C2KS is the Founder of CR4NK and the TFH series He is the brains of this dream, directing overall production architecture, framework modifications, and custom engine setups.</p>
+                <span class="role-badge">Developer & Founder</span>
+                <p>Crafting psychological gameplay loops, level design, and narrative development for our titles hr also founded amd runs CR4NK.</p>
             </div>
-
-            <div class="member-card">
-                <h2>Alakirchy</h2>
-                <div class="role-title">Music Developer</div>
-                <p>Alakirchy handles the full sonic atmosphere and sound design layers. He is the Music Developer behind the projects—without him, the games are very, very quiet.</p>
-            </div>
-
-            <div class="member-card">
-                <h2>Paidprawnyt</h2>
-                <div class="role-title">PlayTester / Co Founder</div>
-                <p>He plays the games before release, telling the developers/founder whether or not the game is worthy right now to be released. Handles crucial gameplay evaluation and mechanic verification feedback.</p>
-            </div>
-
         </div>
     </main>
 
