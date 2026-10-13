@@ -18,16 +18,46 @@
             line-height: 1.6;
         }
 
+        /* Responsive Navigation Bar Styling matching team.html */
         nav {
             background-color: #1a1a1a;
             padding: 1rem 2rem;
             display: flex;
             justify-content: flex-start;
+            align-items: center;
             gap: 2rem;
             border-bottom: 2px solid #2a2a2a;
+            position: relative;
+            z-index: 100;
         }
 
-        nav a {
+        .menu-toggle {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
             color: #aaaaaa;
             text-decoration: none;
             font-weight: 600;
@@ -35,7 +65,7 @@
             transition: color 0.3s ease;
         }
 
-        nav a:hover, nav a.active {
+        .nav-links a:hover, .nav-links a.active {
             color: #ffffff;
         }
 
@@ -153,7 +183,46 @@
             font-size: 0.9rem;
         }
 
+        /* Mobile Breakpoint for Hamburger Menu & Hero Adjustments */
         @media (max-width: 768px) {
+            nav {
+                justify-content: space-between;
+                padding: 1rem 1.5rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #1a1a1a;
+                padding: 1rem 1.5rem;
+                gap: 1.5rem;
+                border-bottom: 2px solid #2a2a2a;
+            }
+
+            .menu-toggle:checked ~ .nav-links {
+                display: flex;
+            }
+
+            .menu-toggle:checked ~ .hamburger span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .menu-toggle:checked ~ .hamburger span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle:checked ~ .hamburger span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
             .hero-banner { height: 280px; }
             .hero-title { font-size: 4rem; letter-spacing: 3px; }
         }
@@ -162,12 +231,20 @@
 <body>
 
     <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="games.html">Games</a>
-        <a href="engines.html">Engines</a>
-        <a href="team.html">Team</a>
-        <a href="contact.html">Contact</a>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="games.html">Games</a>
+            <a href="engines.html">Engines</a>
+            <a href="team.html">Team</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </nav>
 
     <header class="hero-banner">
