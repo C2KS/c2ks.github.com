@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CR4NK - About</title>
-    
     
     <style>
         * {
@@ -124,7 +121,7 @@
         }
 
         .card p:last-of-type {
-            margin-bottom: 0px; /* Reset space now that image is gone */
+            margin-bottom: 0px;
         }
 
         .card strong {
@@ -139,16 +136,30 @@
             font-size: 0.9rem;
         }
 
-        /* JavaScript Scroll Animation Layouts */
-        .scroll-fade {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        /* ----------------------------------------------------------------- */
+        /* STAGGERED FADE-IN ANIMATION LAYOUTS                               */
+        /* ----------------------------------------------------------------- */
+        @keyframes customFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .scroll-fade.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .fade-step-1 {
+            opacity: 0;
+            animation: customFadeIn 0.8s ease-out forwards;
+            animation-delay: 0.1s;
+        }
+
+        .fade-step-2 {
+            opacity: 0;
+            animation: customFadeIn 0.8s ease-out forwards;
+            animation-delay: 0.3s;
         }
 
         /* Mobile Breakpoint for Hamburger Menu */
@@ -195,7 +206,6 @@
 </head>
 <body>
 
-    
     <nav>
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
         <label for="menu-toggle" class="hamburger">
@@ -213,44 +223,26 @@
         </div>
     </nav>
 
-    
-    <main class="container scroll-fade">
+    <main class="container">
         
-        <section class="welcome-section">
+        <!-- Step 1: Title drops in slightly first -->
+        <section class="welcome-section fade-step-1">
             <h1>About Me</h1>
             <p style="color: #888888;">The developer behind the franchise architecture.</p>
         </section>
 
-        <section class="card">
+        <!-- Step 2: Content card follows quickly behind -->
+        <section class="card fade-step-2">
             <h2>Bio Overview</h2>
             <p>Hey! I'm a new'ish game developer learning how to code websites. Welcome to my page!</p>
             <p>I am a passionate indie game developer building the <strong>The Final Hour</strong> horror franchise using a custom-modified Source Engine.</p>
         </section>
 
-        <footer>
+        <footer class="fade-step-2">
             <p>Project Launched: August 31, 2026</p>
         </footer>
 
     </main>
-
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const fadeElements = document.querySelectorAll(".scroll-fade");
-            
-            function checkScroll() {
-                fadeElements.forEach(el => {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top < window.innerHeight - 50) {
-                        el.classList.add("visible");
-                    }
-                });
-            }
-            
-            window.addEventListener("scroll", checkScroll);
-            checkScroll(); 
-        });
-    </script>
 
 </body>
 </html>
