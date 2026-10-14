@@ -133,6 +133,38 @@
             font-size: 0.95rem;
         }
 
+        /* ----------------------------------------------------------------- */
+        /* STAGGERED FADE-IN ANIMATION LAYOUTS                               */
+        /* ----------------------------------------------------------------- */
+        @keyframes customFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-step-1 {
+            opacity: 0;
+            animation: customFadeIn 0.8s ease-out forwards;
+            animation-delay: 0.1s;
+        }
+
+        .fade-step-2 {
+            opacity: 0;
+            animation: customFadeIn 0.8s ease-out forwards;
+            animation-delay: 0.3s;
+        }
+
+        .fade-step-3 {
+            opacity: 0;
+            animation: customFadeIn 0.8s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
         /* Mobile Breakpoint for Hamburger Menu */
         @media (max-width: 768px) {
             nav {
@@ -195,21 +227,22 @@
     </nav>
 
     <main class="container">
-        <h1>Meet the Team</h1>
+        <!-- Step 1: Main Header glides in first -->
+        <h1 class="fade-step-1">Meet the Team</h1>
         
         <div class="team-grid">
-            <!-- Paid's Card -->
-            <div class="team-card">
+            <!-- Step 2: PaidPrawnYT's card enters second -->
+            <div class="team-card fade-step-2">
                 <h2>PaidPrawnYT</h2>
                 <span class="role-badge">Game Designer & Music Dev</span>
-                <p>Paid helps design Levels in our game amd also creates the games Soundtrack!</p>
+                <p>Paid helps design levels in our game and also creates the game's soundtrack!</p>
             </div>
 
-            <!-- C2KS's Card (Now fully matches Paid's design) -->
-            <div class="team-card">
+            <!-- Step 3: C2KS's card enters third -->
+            <div class="team-card fade-step-3">
                 <h2>C2KS</h2>
                 <span class="role-badge">Developer & Founder</span>
-                <p>Crafting psychological gameplay loops, level design, and narrative development for our titles hr also founded amd runs CR4NK.</p>
+                <p>Crafting psychological gameplay loops, level design, and narrative development for our titles—he also founded and runs CR4NK.</p>
             </div>
         </div>
     </main>
