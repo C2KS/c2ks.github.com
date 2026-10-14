@@ -128,6 +128,7 @@
         }
 
         .card-tfh::before { background-image: url('image_jaCqGO.png'); }
+        .card-tfhu::before { background-image: url('image_tfhu.png'); } 
 
         .game-card-content {
             position: relative;
@@ -156,6 +157,11 @@
             background-color: rgba(255, 51, 51, 0.15); 
             color: #ff3333; 
             border: 1px solid #ff3333; 
+        }
+
+        /* Styling for planned status variation if needed in future */
+        .status-badge.planned {
+            /* You can add custom styling for planned status here if you want it to look different */
         }
 
         .engine-info {
@@ -239,11 +245,22 @@
 
         <div class="games-grid">
             
+            <!-- Existing Game Card -->
             <div class="game-card card-tfh">
                 <div class="game-card-content">
                     <span class="status-badge">In Development</span>
                     <h3>The Final Hour</h3>
                     <p>A psychological horror game following an amputated US Marine civilian in City 17 struggling with war trauma and sleep paralysis. Face a grim descent toward ultimate despair, or attempt to break the cycle by seeking refuge with your K9 companion within the Resistance.</p>
+                    <div class="engine-info">Engine: <strong>Geared 2</strong></div>
+                </div>
+            </div>
+
+            <!-- New Game Card: The Final Hour : Uprising -->
+            <div class="game-card card-tfhu">
+                <div class="game-card-content">
+                    <span class="status-badge planned">Planned</span>
+                    <h3>The Final Hour : Uprising</h3>
+                    <p>After the events of The Final Hour, <strong>Spearrhead</strong> and his brother in arms Gordon Freeman fight the Combine in City <strong>17</strong> eventually separating as Gordon makes his way through the Citadel.</p>
                     <div class="engine-info">Engine: <strong>Geared 2</strong></div>
                 </div>
             </div>
